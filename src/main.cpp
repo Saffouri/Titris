@@ -1,5 +1,6 @@
 #include <iostream>
+#include "Game.h"
 
 int main() {
-    std::cout << "Hello Easy C++ project!!" << std::endl;
+    Game game(800, 600, "Holy shit boi");
 }
