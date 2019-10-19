@@ -34,7 +34,7 @@ void MainMenuState::Init()
 void MainMenuState::HandleInput()
 {
     sf::Event event;
-    while (m_sharedData->wnd.pollEvent(event))
+    while (m_sharedData->gfx.GetWindow().pollEvent(event))
     {
         if (event.type == sf::Event::KeyPressed && !m_inhibitKey)
         {
@@ -85,16 +85,16 @@ void MainMenuState::Draw()
 {
     for (auto& t : m_texts)
     {
-        m_sharedData->wnd.draw(t);
+        m_sharedData->gfx.Draw(t);
     }
 }
 
 void MainMenuState::Pause()
 {
-    std::cout << "Main Game State Paused!\n";
+    std::cout << "Main Menu State Paused!\n";
 }
 
 void MainMenuState::Resume()
 {
-    std::cout << "Main Game State Resumed!\n";
+    std::cout << "Main Menu State Resumed!\n";
 }

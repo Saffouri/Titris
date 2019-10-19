@@ -2,11 +2,12 @@
 #include "StateStack.h"
 #include "AssetManager.h"
 #include "FrameTimer.h"
+#include "Graphics.h"
 #include <memory>
 
 struct GameData
 {
-    sf::RenderWindow wnd;
+    Graphics gfx;
     StateStack statesManager;
     AssetManager assetsManager;
 };
@@ -22,4 +23,5 @@ class Game
         GameDataRef m_sharedData = std::make_shared<GameData>();
         float m_dt;
         FrameTimer m_ft;
+        sf::RenderWindow m_wnd;
 };
